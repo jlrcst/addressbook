@@ -14,20 +14,21 @@ import java.util.List;
 public class AddressBookClient {
 
     public static void main(String[] args) {
-        
+
         //Parse contacts from file
         FileParser fileParser = new FileParser();
-        List<Contact> contacts = fileParser.getContactsFromFile(AddressBookClient.class.getClassLoader().getResource("AddressBook").getPath());
-        
+        //System.out.println(AddressBookClient.class.getResource("/AddressBook").getPath());
+        List<Contact> contacts = fileParser.getContactsFromFile(AddressBookClient.class.getResource("/AddressBook"));
+
         //Create AddressBook
         AbstractAddressBookCreator addressBookCreator = new SimpleAddressBookCreator();
         AddressBook addressBook = addressBookCreator.createAddressBook();
-        
+
         //Add contacts to the addressbook
         contacts.stream().forEach((contact) -> {
             addressBook.addContact(contact);
         });
-        
+
         //Print results
         System.out.println("Males are in the address book " + addressBook.getMales());
         System.out.println("Oldest person in the address book " + addressBook.getOldest().getName());
