@@ -47,7 +47,7 @@ public class SimpleAddressBook implements AddressBook, ContactHandler {
 
     @Override
     public int getDaysOlder(String name1, String name2) {
-        return this.compareAgeStrategy.getDaysOlder(this.contacts.get(name1), this.contacts.get(name1));
+        return this.compareAgeStrategy.getDaysOlder(this.contacts.get(name1), this.contacts.get(name2));
     }
 
     @Override

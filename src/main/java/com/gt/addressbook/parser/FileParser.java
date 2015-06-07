@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.gt.addressbook.parser;
 
 import com.gt.addressbook.model.Contact;
@@ -26,7 +21,7 @@ import java.util.stream.Stream;
  */
 public class FileParser {
 
-    private final SimpleDateFormat sdf = new SimpleDateFormat("ss/MM/yyyy");
+    private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
 
     public List<Contact> getContactsFromFile(String path) {
         List<Contact> contacts = new ArrayList<>();
