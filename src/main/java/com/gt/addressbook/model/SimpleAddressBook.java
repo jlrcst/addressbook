@@ -2,7 +2,9 @@ package com.gt.addressbook.model;
 
 import com.gt.addressbook.chain.ContactHandler;
 import com.gt.addressbook.strategy.AgeStrategy;
+import com.gt.addressbook.strategy.CompareAgeStrategy;
 import com.gt.addressbook.strategy.GenderStrategy;
+import com.gt.addressbook.strategy.SimpleCompareAgeStrategy;
 import java.util.HashMap;
 
 /**
@@ -17,12 +19,15 @@ public class SimpleAddressBook implements AddressBook, ContactHandler {
 
     private final AgeStrategy ageStrategy;
 
+    private final CompareAgeStrategy compareAgeStrategy;
+
     private ContactHandler next;
 
-    public SimpleAddressBook(GenderStrategy genderStrategy, AgeStrategy ageStrategy) {
+    public SimpleAddressBook(GenderStrategy genderStrategy, AgeStrategy ageStrategy, SimpleCompareAgeStrategy compareAgeStrategy) {
         this.contacts = new HashMap<>();
         this.genderStrategy = genderStrategy;
         this.ageStrategy = ageStrategy;
+        this.compareAgeStrategy = compareAgeStrategy;
     }
 
     @Override
@@ -36,8 +41,13 @@ public class SimpleAddressBook implements AddressBook, ContactHandler {
     }
 
     @Override
-    public Contact getOlder() {
-        return this.ageStrategy.getOlder();
+    public Contact getOldest() {
+        return this.ageStrategy.getOldest();
+    }
+
+    @Override
+    public int getDaysOlder(String name1, String name2) {
+        return this.compareAgeStrategy.getDaysOlder(this.contacts.get(name1), this.contacts.get(name1));
     }
 
     @Override

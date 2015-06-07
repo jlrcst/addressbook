@@ -22,7 +22,7 @@ public class SimpleAgeStrategy implements AgeStrategy, ContactHandler {
     }
 
     @Override
-    public Contact getOlder() {
+    public Contact getOldest() {
         return this.queue.peek();
     }
 

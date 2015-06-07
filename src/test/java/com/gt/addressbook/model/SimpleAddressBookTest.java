@@ -110,10 +110,10 @@ public class SimpleAddressBookTest {
     }
 
     /**
-     * Test of getOlder method, of class SimpleAddressBook.
+     * Test of getOldest method, of class SimpleAddressBook.
      */
     @Test
-    public void testGetOlder() {
+    public void testGetOldest() {
 
         //Given
         Contact contact1 = ContactBuilder.aContact()
@@ -137,7 +137,7 @@ public class SimpleAddressBookTest {
         String expectedName = "name2";
 
         //when
-        Contact result = this.simpleAddressBook.getOlder();
+        Contact result = this.simpleAddressBook.getOldest();
 
         //then
         assertEquals(expectedName, result.getName());

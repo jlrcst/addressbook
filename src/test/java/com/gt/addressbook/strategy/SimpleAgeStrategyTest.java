@@ -22,10 +22,10 @@ public class SimpleAgeStrategyTest {
     }
 
     /**
-     * Test of getOlder method, of class SimpleAgeStrategy.
+     * Test of getOldest method, of class SimpleAgeStrategy.
      */
     @Test
-    public void testGetOlder() {
+    public void testGetOldest() {
 
         //given
         Contact contact1 = ContactBuilder.aContact()
@@ -43,7 +43,7 @@ public class SimpleAgeStrategyTest {
         String expResult = "name2";
 
         //when
-        Contact result = this.simpleAgeStrategy.getOlder();
+        Contact result = this.simpleAgeStrategy.getOldest();
 
         //then
         assertEquals(expResult, result.getName());

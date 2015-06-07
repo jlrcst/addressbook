@@ -8,6 +8,6 @@ import com.gt.addressbook.model.Contact;
  */
 public interface AgeStrategy {
  
-    public Contact getOlder();
+    public Contact getOldest();
     
 }
