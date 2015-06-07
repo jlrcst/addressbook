@@ -31,9 +31,9 @@ public class AddressBookClient {
 
         //Print results
         System.out.println("Gumtree Coding Challenge Results.");
-        System.out.println("Males in the address book: " + addressBook.getMales());
-        System.out.println("Oldest person in the address book: " + addressBook.getOldest().getName());
-        System.out.println("Bill is " + addressBook.getDaysOlder("Bill McKnight", "Paul Robinson") + " days older than Paul");
+        System.out.println("There are " + addressBook.getMales() + " males in the address book.");
+        System.out.println(addressBook.getOldest().getName() + " is the oldest person in the address book.");
+        System.out.println("Bill is " + addressBook.getDaysOlder("Bill McKnight", "Paul Robinson") + " days older than Paul.");
     }
 
 }
