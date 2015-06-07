@@ -17,7 +17,7 @@ public class AddressBookClient {
 
         //Parse contacts from file
         FileParser fileParser = new FileParser();        
-        List<Contact> contacts = fileParser.getContactsFromFile(AddressBookClient.class.getResource("AddressBook"));
+        List<Contact> contacts = fileParser.getContactsFromFile(AddressBookClient.class.getResource("/AddressBook"));
 
         //Create AddressBook
         AbstractAddressBookCreator addressBookCreator = new SimpleAddressBookCreator();
