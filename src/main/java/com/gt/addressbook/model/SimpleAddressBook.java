@@ -82,7 +82,9 @@ public class SimpleAddressBook implements AddressBook, ContactHandler {
             default:
                 throw new AssertionError();
         }
-        this.next.handleRequest(contact, operation);
+        if (this.next != null) {
+            this.next.handleRequest(contact, operation);
+        }
     }
 
 }
