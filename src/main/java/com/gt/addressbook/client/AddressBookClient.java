@@ -30,7 +30,7 @@ public class AddressBookClient {
         });
 
         //Print results
-        System.out.println("Males are in the address book " + addressBook.getMales());
+        System.out.println("Males in the address book " + addressBook.getMales());
         System.out.println("Oldest person in the address book " + addressBook.getOldest().getName());
         System.out.println("Bill is " + addressBook.getDaysOlder("Bill McKnight", "Paul Robinson") + " days older than Paul");
     }
